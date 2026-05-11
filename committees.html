@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Committees | TAMS Medical Society</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    /* ── Committees page overrides ── */
+    body { background: #f0e0c0; }
+
+    /* Photo strip + ribbon header */
+    .committees-header {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      max-height: 320px;
+    }
+    .committees-header-photo {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: brightness(.72);
+    }
+    .committees-ribbon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #7a1010;
+      padding: 18px 56px 16px;
+      text-align: center;
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+      min-width: 420px;
+      white-space: nowrap;
+    }
+    .committees-ribbon h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: bold;
+      color: #e8d5a3;
+      letter-spacing: 4px;
+      margin-bottom: 4px;
+    }
+    .committees-ribbon p {
+      font-family: Georgia, serif;
+      font-size: .82rem;
+      color: rgba(232,213,163,.85);
+      letter-spacing: .5px;
+    }
+
+    /* ── Cards grid ── */
+    .committees-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cc {
+      padding: 48px 32px 44px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .cc.cream  { background: #f0e0c0; }
+    .cc.maroon { background: #7a1010; }
+
+    /* Bootstrap icon */
+    .cc-icon {
+      font-size: 90px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+    .cc.cream  .cc-icon { color: #4a0a0a; }
+    .cc.maroon .cc-icon { color: #e8d5a3; }
+
+    /* wixstatic image icon */
+    .cc-icon-img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 22px;
+    }
+    .cc.cream  .cc-icon-img { filter: brightness(0) sepia(1) hue-rotate(320deg) saturate(5) brightness(0.3); }
+    .cc.maroon .cc-icon-img { filter: brightness(0) invert(1) sepia(1) hue-rotate(5deg) saturate(2) brightness(1.1); }
+
+    /* Title */
+    .cc h3 {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .cc.cream  h3 { color: #4a0a0a; }
+    .cc.maroon h3 { color: #e8d5a3; }
+
+    /* Body text */
+    .cc p {
+      font-family: Georgia, serif;
+      font-size: .88rem;
+      line-height: 1.75;
+      max-width: 260px;
+    }
+    .cc.cream  p { color: #3a0808; }
+    .cc.maroon p { color: rgba(232,213,163,.88); }
+
+    .hashtag-section { background: #3a0808; }
+    footer { background: #2d0808; }
+
+    @media (max-width: 860px) {
+      .committees-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .committees-cards { grid-template-columns: 1fr; }
+      .cc { padding: 36px 24px; }
+      .committees-ribbon { min-width: unset; padding: 14px 32px 12px; clip-path: none; border-radius: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<!-- Photo strip with ribbon overlay -->
+<div class="committees-header">
+  <img
+    src="assets/images/9f980d_d357130618c5402793734f094f5727c7~mv2.png"
+    alt="TMS Committees"
+    class="committees-header-photo"
+  />
+  <div class="committees-ribbon">
+    <h1>COMMITTEES</h1>
+    <p>Click on the symbols to learn more about them!</p>
+  </div>
+</div>
+
+<!-- Committee cards: alternating cream/maroon per cell -->
+<div class="committees-cards">
+
+  <!-- Row 1 -->
+
+  <!-- 1 – TMS Shadows (cream) -->
+  <a href="committees/committee-shadows.html" class="cc cream" id="tms-shadows">
+    <i class="bi bi-eye cc-icon"></i>
+    <h3>TMS Shadows</h3>
+    <p>An educational committee that provides students with shadowing opportunities and hosts Dinner With Doctors, connecting TAMS students directly with physicians across medical specialties.</p>
+  </a>
+
+  <!-- 2 – Women in Medicine (maroon) -->
+  <a href="committees/committee-wim.html" class="cc maroon" id="women-in-medicine">
+    <img
+      src="assets/images/9f980d_e46c0afe815d47be865137c4c705d958~mv2.png"
+      alt="Women in Medicine icon"
+      class="cc-icon-img"
+    />
+    <h3>Women in Medicine</h3>
+    <p>An educational committee partnered with the TAMS Girl Up Chapter, striving for equality and providing a safe space for all interested in the medical field.</p>
+  </a>
+
+  <!-- 3 – TAMS Alzheimer's Care (cream) -->
+  <a href="committees/committee-alzheimers.html" class="cc cream" id="alzheimers">
+    <img
+      src="assets/images/9f980d_bc9c15477ddc4bab913d5055e69564d7~mv2.png"
+      alt="TAMS Alzheimer's Care icon"
+      class="cc-icon-img"
+    />
+    <h3>TAMS Alzheimer's Care</h3>
+    <p>A volunteering committee dedicated to providing support and company for Alzheimer's patients.</p>
+  </a>
+
+  <!-- Row 2 -->
+
+  <!-- 4 – TAMS Neuroscience Society (maroon) -->
+  <a href="committees/committee-neuroscience.html" class="cc maroon" id="neuroscience">
+    <i class="bi bi-lightning cc-icon"></i>
+    <h3>TAMS Neuroscience Society</h3>
+    <p>An educational committee dedicated to teaching and providing opportunities in the field of neuroscience.</p>
+  </a>
+
+  <!-- 5 – Denton Nursing Home (cream) -->
+  <a href="committees/committee-dnh.html" class="cc cream" id="denton-nursing">
+    <i class="bi bi-house-heart cc-icon"></i>
+    <h3>Denton Nursing Home</h3>
+    <p>A volunteering committee partnered with HOPE, dedicated to providing an opportunity for students to contribute positively to assisted living communities and interact with senior citizens.</p>
+  </a>
+
+  <!-- 6 – Outreach (maroon) -->
+  <a href="committees/committee-outreach.html" class="cc maroon" id="outreach">
+    <i class="bi bi-people cc-icon"></i>
+    <h3>Outreach</h3>
+    <p>A volunteering committee dedicated to teaching students in Denton about the diverse field of medicine.</p>
+  </a>
+
+  <!-- Row 3 -->
+
+  <!-- 7 – Nightingale (cream) -->
+  <a href="committees/committee-nightingale.html" class="cc cream" id="nightingale">
+    <img
+      src="assets/images/9f980d_59df0447f68a4fbfa4ef10cbf74f1d68~mv2.png"
+      alt="Nightingale icon"
+      class="cc-icon-img"
+    />
+    <h3>Nightingale</h3>
+    <p>The TAMS chapter of Nightingale Advocacy, an organization dedicated to advocating for young voices in America in an attempt to bring health care policy changes.</p>
+  </a>
+
+  <!-- 8 – Stethoscope Committee (maroon) -->
+  <a href="committees/committee-stethoscope.html" class="cc maroon" id="stethoscope-committee">
+    <i class="bi bi-journal-richtext cc-icon"></i>
+    <h3>Stethoscope Committee</h3>
+    <p>Our committee dedicated to creating our annual Stethoscope journal — written, edited, illustrated, and designed entirely by TAMS students.</p>
+  </a>
+
+  <!-- 9 – TAMS Red Cross (cream) -->
+  <a href="committees/committee-redcross.html" class="cc cream" id="red-cross">
+    <i class="bi bi-heart-pulse cc-icon"></i>
+    <h3>TAMS Red Cross</h3>
+    <p>An educational committee dedicated to training the TAMS community in various medical activities, humanitarian aid, and serving with compassion.</p>
+  </a>
+
+  <!-- Row 4 -->
+
+  <!-- 10 – TAMS Biomedical Engineering (maroon) -->
+  <a href="committees/committee-biomedical.html" class="cc maroon" id="biomedical">
+    <i class="bi bi-gear cc-icon"></i>
+    <h3>TAMS Biomedical Engineering</h3>
+    <p>An educational committee dedicated to creating a community of students passionate about biomedical engineering.</p>
+  </a>
+
+  <!-- 11 – Wilderness Medicine (cream) -->
+  <a href="committees/committee-wilderness.html" class="cc cream" id="wilderness">
+    <i class="bi bi-tree cc-icon"></i>
+    <h3>Wilderness Medicine Committee</h3>
+    <p>An educational committee exploring the unique challenges of providing medical care in remote and outdoor environments.</p>
+  </a>
+
+  <!-- 12 – Healing With Music (maroon) -->
+  <a href="committees/committee-healing-music.html" class="cc maroon" id="healing-music">
+    <i class="bi bi-music-note-beamed cc-icon"></i>
+    <h3>Healing With Music</h3>
+    <p>A volunteering committee partnered with Dull Roar that enables groups of musicians to visit nursing homes and play music for residents.</p>
+  </a>
+
+</div>
+
+<!-- #TMSonTOP -->
+<div class="hashtag-section">
+  <div class="container">
+    <h2>#TMSonTOP</h2>
+    <div class="social-row">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" />
+      </a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" />
+      </a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" />
+      </a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/images/9f980d_6f5b16238fb44d4796c9e157c1366650~mv2.png" alt="TMS Footer Logo" class="footer-logo" />
+    <p>© 2024 TAMS Medical Society</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener"><img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" /></a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" /></a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener"><img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" /></a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

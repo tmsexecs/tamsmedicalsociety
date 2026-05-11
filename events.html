@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events | TAMS Medical Society</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap Icons – thin outline SVG icon font matching the original style -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    /* ── Events page overrides ── */
+    body { background: #f0e0c0; }   /* cream/parchment page background */
+
+    /* Photo strip + ribbon header */
+    .events-header {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      max-height: 320px;
+    }
+    .events-header-photo {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: brightness(.72);
+    }
+    .events-ribbon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #7a1010;
+      padding: 18px 56px 16px;
+      text-align: center;
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+      min-width: 380px;
+    }
+    .events-ribbon h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: bold;
+      color: #e8d5a3;
+      letter-spacing: 4px;
+      margin-bottom: 4px;
+    }
+    .events-ribbon p {
+      font-family: Georgia, serif;
+      font-size: .82rem;
+      color: rgba(232,213,163,.85);
+      letter-spacing: .5px;
+    }
+
+    /* ── Cards grid ── */
+    .events-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ec {
+      padding: 48px 32px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    /* Odd cards (1,3,5) = cream */
+    .ec.cream {
+      background: #f0e0c0;
+    }
+    /* Even cards (2,4,6) = maroon */
+    .ec.maroon {
+      background: #7a1010;
+    }
+
+    /* Icon */
+    .ec-icon {
+      font-size: 100px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+    .ec.cream .ec-icon { color: #4a0a0a; }
+    .ec.maroon .ec-icon { color: #e8d5a3; }
+
+    /* Ferris wheel SVG icon (not in Bootstrap Icons) */
+    .ec-icon-svg {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 22px;
+    }
+    .ec.cream .ec-icon-svg path,
+    .ec.cream .ec-icon-svg circle,
+    .ec.cream .ec-icon-svg line,
+    .ec.cream .ec-icon-svg rect { stroke: #4a0a0a; }
+    .ec.maroon .ec-icon-svg path,
+    .ec.maroon .ec-icon-svg circle,
+    .ec.maroon .ec-icon-svg line,
+    .ec.maroon .ec-icon-svg rect { stroke: #e8d5a3; }
+
+    /* Title */
+    .ec h3 {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .ec.cream h3 { color: #4a0a0a; }
+    .ec.maroon h3 { color: #e8d5a3; }
+
+    /* Body text */
+    .ec p {
+      font-family: Georgia, serif;
+      font-size: .9rem;
+      line-height: 1.75;
+      max-width: 280px;
+    }
+    .ec.cream p { color: #3a0808; }
+    .ec.maroon p { color: rgba(232,213,163,.88); }
+
+    /* hashtag + footer on cream bg */
+    .hashtag-section { background: #3a0808; }
+    footer { background: #2d0808; }
+
+    @media (max-width: 760px) {
+      .events-cards { grid-template-columns: 1fr; }
+      .ec.cream, .ec.maroon { padding: 36px 24px; }
+      .events-ribbon { min-width: unset; padding: 14px 32px 12px; clip-path: none; border-radius: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<!-- Photo strip with ribbon overlay -->
+<div class="events-header">
+  <img
+    src="assets/images/9f980d_9bece825e06244bc9da1617c8da63577~mv2.png"
+    alt="TMS Events collage"
+    class="events-header-photo"
+  />
+  <div class="events-ribbon">
+    <h1>EVENTS</h1>
+    <p>Click on the event icons to learn more about them!</p>
+  </div>
+</div>
+
+<!-- Event cards: cream / maroon / cream  per row -->
+<div class="events-cards">
+
+  <!-- 1 – Committee Carnival (cream) -->
+  <a href="events/event-carnival.html" class="ec cream" id="committee-carnival" style="text-decoration:none;">
+    <!-- Ferris wheel inline SVG -->
+    <svg class="ec-icon-svg" viewBox="0 0 100 100" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- outer ring -->
+      <circle cx="50" cy="50" r="38"/>
+      <!-- hub -->
+      <circle cx="50" cy="50" r="6"/>
+      <!-- spokes -->
+      <line x1="50" y1="44" x2="50" y2="12"/>
+      <line x1="50" y1="56" x2="50" y2="88"/>
+      <line x1="44" y1="50" x2="12" y2="50"/>
+      <line x1="56" y1="50" x2="88" y2="50"/>
+      <line x1="45.3" y1="45.3" x2="23.1" y2="23.1"/>
+      <line x1="54.7" y1="54.7" x2="76.9" y2="76.9"/>
+      <line x1="54.7" y1="45.3" x2="76.9" y2="23.1"/>
+      <line x1="45.3" y1="54.7" x2="23.1" y2="76.9"/>
+      <!-- gondolas -->
+      <rect x="46" y="8" width="8" height="7" rx="1"/>
+      <rect x="46" y="85" width="8" height="7" rx="1"/>
+      <rect x="8"  y="46" width="7" height="8" rx="1"/>
+      <rect x="85" y="46" width="7" height="8" rx="1"/>
+      <rect x="19" y="19" width="7" height="7" rx="1"/>
+      <rect x="74" y="74" width="7" height="7" rx="1"/>
+      <rect x="74" y="19" width="7" height="7" rx="1"/>
+      <rect x="19" y="74" width="7" height="7" rx="1"/>
+      <!-- pole -->
+      <line x1="50" y1="88" x2="50" y2="100"/>
+      <line x1="38" y1="100" x2="62" y2="100"/>
+    </svg>
+    <h3>Committee Carnival</h3>
+    <p>At the beginning of the year, TMS committees hold a mini field-day-esque showcase of their activities for the upcoming school year!</p>
+  </a>
+
+  <!-- 2 – Dinner With Doctors (maroon) -->
+  <a href="events/event-dwd.html" class="ec maroon" id="dinner-with-doctors" style="text-decoration:none;">
+    <i class="bi bi-lightbulb ec-icon"></i>
+    <h3>Dinner With Doctors</h3>
+    <p>Hosted by the Shadows Committee, students have dinner with doctors in various medical fields, providing opportunities to learn and ask questions about the world of medicine!</p>
+  </a>
+
+  <!-- 3 – Aid The Cause (cream) -->
+  <a href="events/event-atc.html" class="ec cream" id="aid-the-cause" style="text-decoration:none;">
+    <!-- Hands holding / protecting box icon -->
+    <svg class="ec-icon-svg" viewBox="0 0 100 100" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- box -->
+      <rect x="32" y="28" width="36" height="30" rx="2"/>
+      <line x1="32" y1="40" x2="68" y2="40"/>
+      <line x1="50" y1="28" x2="50" y2="40"/>
+      <!-- left arm / hand -->
+      <path d="M14 72 Q10 60 20 55 L32 58"/>
+      <path d="M14 72 Q18 82 30 80 L50 80"/>
+      <!-- right arm / hand -->
+      <path d="M86 72 Q90 60 80 55 L68 58"/>
+      <path d="M86 72 Q82 82 70 80 L50 80"/>
+      <!-- rays / sparkle from box -->
+      <line x1="50" y1="22" x2="50" y2="16"/>
+      <line x1="60" y1="24" x2="63" y2="19"/>
+      <line x1="40" y1="24" x2="37" y2="19"/>
+    </svg>
+    <h3>Aid The Cause</h3>
+    <p>Each November, we host a TAMS-wide talent show where students can watch their peers perform and donate money for medically-related cause -- all while enjoying good food and fun!</p>
+  </a>
+
+  <!-- 4 – Stethoscope Launch Party (maroon) -->
+  <a href="events/event-stethoscope.html" class="ec maroon" id="stethoscope-launch" style="text-decoration:none;">
+    <i class="bi bi-journal-richtext ec-icon"></i>
+    <h3>Stethoscope Launch Party</h3>
+    <p>The hard work of the Stethoscope committee is shown during the Stethoscope launch party where publishers and editors come together to celebrate their work!</p>
+  </a>
+
+  <!-- 5 – Shear Kindness (cream) -->
+  <a href="events/event-shear.html" class="ec cream" id="shear-kindness" style="text-decoration:none;">
+    <i class="bi bi-scissors ec-icon"></i>
+    <h3>Shear Kindness</h3>
+    <p>Partnering with Subaru, we hold a hair donation drive where hair is donated to Children With Hair Loss© and Matter of Trust©!</p>
+  </a>
+
+  <!-- 6 – Spring Fling (maroon) -->
+  <a href="events/event-spring.html" class="ec maroon" id="spring-fling" style="text-decoration:none;">
+    <i class="bi bi-flower1 ec-icon"></i>
+    <h3>Spring Fling</h3>
+    <p>Held by the newly-chosen board, we host a field day event where students get to wind down and celebrate the past year!</p>
+  </a>
+
+</div>
+
+<!-- #TMSonTOP -->
+<div class="hashtag-section">
+  <div class="container">
+    <h2>#TMSonTOP</h2>
+    <div class="social-row">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" />
+      </a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" />
+      </a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" />
+      </a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/images/9f980d_6f5b16238fb44d4796c9e157c1366650~mv2.png" alt="TMS Footer Logo" class="footer-logo" />
+    <p>© 2024 TAMS Medical Society</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener"><img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" /></a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" /></a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener"><img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" /></a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

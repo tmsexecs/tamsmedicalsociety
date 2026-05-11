@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | TAMS Medical Society</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    /* ── Home page feature cards ── */
+    .home-feature-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .hfc {
+      padding: 64px 40px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      transition: filter .2s;
+    }
+    .hfc:hover { filter: brightness(.92); }
+    .hfc.maroon { background: #7a1010; }
+    .hfc.cream  { background: #f0e0c0; }
+    .hfc .hfc-icon { font-size: 90px; line-height: 1; margin-bottom: 28px; }
+    .hfc.maroon .hfc-icon { color: #e8d5a3; }
+    .hfc.cream  .hfc-icon { color: #2d0808; }
+    .hfc h3 {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-style: italic;
+      letter-spacing: .3px;
+      margin-bottom: 18px;
+    }
+    .hfc.maroon h3 { color: #e8d5a3; }
+    .hfc.cream  h3 { color: #8b1a1a; }
+    .hfc p {
+      font-family: Georgia, serif;
+      font-size: .92rem;
+      line-height: 1.75;
+      max-width: 260px;
+      margin-bottom: 28px;
+    }
+    .hfc.maroon p { color: rgba(232,213,163,.85); }
+    .hfc.cream  p { color: #2d0808; }
+    .hfc .hfc-link {
+      font-family: Georgia, serif;
+      font-size: .88rem;
+      font-weight: bold;
+      font-style: italic;
+    }
+    .hfc.maroon .hfc-link { color: #e8d5a3; }
+    .hfc.cream  .hfc-link { color: #2d0808; }
+    /* What Is TMS section */
+    .what-tms-section {
+      background: #3a0808;
+      padding: 56px 24px;
+      text-align: center;
+    }
+    .what-tms-section h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: bold;
+      font-style: italic;
+      color: #e8d5a3;
+      margin-bottom: 24px;
+    }
+    .what-tms-section p {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      color: #e8d5a3;
+      line-height: 1.8;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hashtag-section { background: #3a0808; }
+    footer { background: #2d0808; }
+    @media (max-width: 760px) {
+      .home-feature-cards { grid-template-columns: 1fr; }
+      .hfc { padding: 48px 28px 44px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<!-- Hero Carousel -->
+<div class="hero-carousel" id="heroCarousel">
+
+  <!-- Slide 1: Meet the Board -->
+  <div class="carousel-slide active">
+    <img src="assets/images/9f980d_6b3ad697a7134de2b0020e9abbb642a6~mv2.jpg"
+         alt="Meet the Board" />
+    <div class="carousel-overlay">
+      <div class="carousel-heading">meet the<br>board</div>
+      <a href="board.html" class="carousel-btn">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Slide 2: Our Events -->
+  <div class="carousel-slide">
+    <img src="assets/images/bec156_1763ecc667e041af8b48d35ce7cca96e~mv2.jpg"
+         alt="Aid The Cause event" />
+    <div class="carousel-overlay">
+      <div class="carousel-heading">aid the<br>cause</div>
+      <a href="events/event-atc.html" class="carousel-btn">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Slide 3: Join Our Committees -->
+  <div class="carousel-slide">
+    <img src="assets/images/bec156_5b262fa882e84c4482cdb267c10d21a5~mv2.jpg"
+         alt="Join Our Committees" />
+    <div class="carousel-overlay">
+      <div class="carousel-heading">join our<br>committees</div>
+      <a href="committees.html" class="carousel-btn">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <button class="carousel-arrow prev" id="carouselPrev">&#8249;</button>
+  <button class="carousel-arrow next" id="carouselNext">&#8250;</button>
+
+  <!-- Dots -->
+  <div class="carousel-dots" id="carouselDots">
+    <button class="carousel-dot active" data-idx="0"></button>
+    <button class="carousel-dot" data-idx="1"></button>
+    <button class="carousel-dot" data-idx="2"></button>
+  </div>
+</div>
+
+<!-- What Is TMS? -->
+<div class="what-tms-section">
+  <h2>What Is TMS?</h2>
+  <p>The TAMS Medical Society (TMS) is a student-run organization with the purpose of bridging the TAMS
+  student body to the medical field. With our various fundraising events, committees, volunteer
+  opportunities, and educational programs, TMS hopes to provide interested students with opportunities
+  to connect with the healthcare field throughout the school year.</p>
+</div>
+
+<!-- Three feature cards -->
+<div class="home-feature-cards">
+
+  <a href="events.html" class="hfc maroon">
+    <i class="bi bi-calendar3 hfc-icon"></i>
+    <h3>our events</h3>
+    <p>Committee Carnival, Dinner with Doctors, Aid the Cause, Stethoscope Launch Party, Shear Kindness, &amp; Spring Fling</p>
+    <span class="hfc-link">Learn More &gt;</span>
+  </a>
+
+  <a href="board.html" class="hfc cream">
+    <i class="bi bi-people hfc-icon"></i>
+    <h3>meet the board</h3>
+    <p>Who we are and why we believe in TMS</p>
+    <span class="hfc-link">Learn More &gt;</span>
+  </a>
+
+  <a href="committees.html" class="hfc maroon">
+    <i class="bi bi-list-ul hfc-icon"></i>
+    <h3>join our committees</h3>
+    <p>Educating and Volunteering</p>
+    <span class="hfc-link">Learn More &gt;</span>
+  </a>
+
+</div>
+
+<!-- #TMSonTOP social section -->
+<div class="hashtag-section">
+  <div class="container">
+    <h2>#TMSonTOP</h2>
+    <div class="social-row">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" />
+      </a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" />
+      </a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" />
+      </a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <img src="assets/images/9f980d_6f5b16238fb44d4796c9e157c1366650~mv2.png"
+         alt="TMS Footer Logo" class="footer-logo" />
+    <p>© 2024 TAMS Medical Society</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener">
+        <img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" />
+      </a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener">
+        <img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" />
+      </a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener">
+        <img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" />
+      </a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener">
+        <img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

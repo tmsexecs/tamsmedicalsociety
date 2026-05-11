@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stethoscope Journal | TAMS Medical Society</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Stethoscope page overrides ── */
+    body { background: #5b0616; }
+
+    /* ── About strip ── */
+    .stetho-about {
+      background: #5b0616;
+      padding: 56px 0 12px;
+      text-align: center;
+    }
+    .stetho-about p {
+      font-family: var(--font-serif);
+      font-size: .98rem;
+      color: #ffeed6;
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 0 auto 14px;
+    }
+    .stetho-about a { color: #ffeed6; }
+    .stetho-about strong { color: #ffeed6 !important; }
+
+    /* ── Issues carousel ── */
+    .stetho-issues {
+      background: #5b0616;
+      padding: 20px 0 60px;
+    }
+    .stetho-years-heading {
+      background: #ffeed6;
+      width: 100%;
+      text-align: center;
+      padding: 32px 24px;
+    }
+    .stetho-years-heading .section-heading {
+      color: #5b0616;
+      margin-bottom: 0;
+    }
+    .issues-carousel-wrap {
+      position: relative;
+      overflow: hidden;
+      margin-top: 60px;
+    }
+    .issues-track {
+      display: flex;
+      transition: transform .45s ease;
+      gap: 0;
+    }
+    .issue-card {
+      flex: 0 0 25%;
+      padding: 0 12px;
+      box-sizing: border-box;
+      text-decoration: none;
+      display: block;
+    }
+    .issue-card-inner {
+      background: transparent;
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .issue-card:hover .issue-card-inner {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
+    .issue-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+    .issue-card-label {
+      padding: 14px 4px 16px;
+      text-align: center;
+    }
+    .issue-card-label h3 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: bold;
+      color: #ffeed6;
+      margin-bottom: 4px;
+    }
+    .issues-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,238,214,.7);
+      border: none;
+      color: #5b0616;
+      font-size: 5rem;
+      line-height: 1;
+      padding: 6px 16px 10px;
+      cursor: pointer;
+      z-index: 5;
+      transition: background .2s;
+      border-radius: 2px;
+    }
+    .issues-arrow:hover { background: #ffeed6; }
+    .issues-arrow.prev { left: 12px }
+    .issues-arrow.next { right: 12px }
+    .issues-arrow:disabled { opacity: .3; cursor: default; }
+    .issues-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .issues-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(91,6,22,.25);
+      border: none;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .issues-dot.active { background: #5b0616; }
+
+    /* ── Contribute CTA ── */
+    .cta-icon-block {
+      text-align: center;
+      padding: 0 0 8px;
+    }
+    .cta-heart-wrap {
+      position: relative;
+      display: inline-block;
+      width: 110px;
+      height: 100px;
+      margin-bottom: 28px;
+    }
+    .cta-heart-svg {
+      width: 100%;
+      height: 100%;
+      fill: #c86567;
+    }
+    .cta-pen-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40%;
+      height: 40%;
+    }
+    .cta-heart-wrap .cta-pen-icon {
+      fill: #ffeed6;
+    }
+    .cta-submit-link {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: .95rem;
+      color: #5b0616;
+      text-decoration: underline;
+      margin-top: 4px;
+    }
+
+    .page-hero { background: #ffeed6; }
+    .page-hero h1 { color: #5b0616; }
+    .page-hero p { color: #5b0616; opacity: .75; }
+    .hashtag-section { background: #3a0808; }
+    footer { background: #2d0808; }
+
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <h1>Stethoscope Journal</h1>
+  <p>TAMS Medical Society's student-run medical journal — established 2019</p>
+</div>
+
+<!-- About -->
+<div class="stetho-about">
+  <div class="container">
+    <p>Being published as a high schooler allows you to present your work and skills as well as establish yourself in whatever field at an early age. It also introduces you to a world of knowledge, be it through the writing skills learned through revision or the network made with mentors and collaborators. That is why we started the Stethoscope Journal in 2019.</p>
+    <p>Stethoscope is TAMS Medical Society's medical journal that compiles medical information from our student community. Ran by the <a href="committees/committee-stethoscope.html"><strong style="color:var(--maroon-dark);">Stethoscope Committee</strong></a>, each year, TAMS students submit articles and artwork about their passions to be published for the greater TAMS community. The committee allows students writing for the magazine to gain perspective on the latest in medical research, healthcare innovations, and interdisciplinary collaborations with medical applications. When the time of writing and revision comes to an end, the committee hosts its annual <a href="events/event-stethoscope.html"><strong style="color:var(--maroon-dark);">Launch Party</strong></a>, celebrating the work of its writers and publishers.</p>
+    <p>Stethoscope helps to bridge gaps in medical education, offering perspectives from students that can resonate with readers from diverse backgrounds. You can be a part of this effort to bring the world of medicine to everyone! If you have research, a passion, or any idea that you'd like to share in the journal, fill out the form below. We'd love to see you contribute to the world of medicine!</p>
+  </div>
+</div>
+
+<!-- Past Issues -->
+<section class="stetho-issues">
+  <div class="container">
+    <div class="cta-icon-block">
+      <a href="https://forms.gle/cTV2YKrW7hQqjUFLA" target="_blank" rel="noopener" class="cta-heart-wrap">
+        <svg class="cta-heart-svg" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.772 303.508">
+          <path d="M310.485 21.159C290.731 4.583 271.484-.029 245.926 0c-27.13 2.348-50.615 15.589-77.041 49.05C142.46 15.589 118.975 2.348 91.845 0 66.287-.029 47.038 4.583 27.284 21.159 14.511 31.878 0 60.341 0 87.465c.339 54.573 38.391 136.609 163.485 212.905l5.165 3.138.236-.141.236.141 5.165-3.138c125.094-76.296 163.146-158.332 163.485-212.905-.001-27.124-14.514-55.587-27.287-66.306z"/>
+        </svg>
+        <svg class="cta-pen-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="m145.497 100.958-36.358 67.85a4.164 4.164 0 0 1-3.675 2.192h-1.133v-54.758c7.166-1.867 12.5-8.334 12.5-16.075 0-9.184-7.475-16.667-16.667-16.667-9.192 0-16.667 7.483-16.667 16.667 0 7.741 5.325 14.208 12.5 16.075V171h-1.141a4.147 4.147 0 0 1-3.675-2.192l-36.359-67.85a4.169 4.169 0 0 1-.125-3.691l19.567-42.934h51.792l19.566 42.942a4.149 4.149 0 0 1-.125 3.683Zm-45.333 7.542a8.336 8.336 0 0 1-8.334-8.333c0-4.592 3.734-8.334 8.334-8.334 4.592 0 8.333 3.742 8.333 8.334 0 4.6-3.741 8.333-8.333 8.333Zm-37.5-64.583v-12.5a2.09 2.09 0 0 1 2.083-2.084h70.834c1.141 0 2.083.942 2.083 2.084v12.5A2.09 2.09 0 0 1 135.581 46H64.747a2.084 2.084 0 0 1-2.083-2.083Zm90.542 49.9-17.984-39.484h.359c5.741 0 10.416-4.666 10.416-10.416v-12.5c0-5.742-4.675-10.417-10.416-10.417H64.747c-5.75 0-10.416 4.675-10.416 10.417v12.5c0 5.75 4.666 10.416 10.416 10.416h.359L47.122 93.808c-1.617 3.517-1.475 7.667.35 11.092l36.367 67.842a12.455 12.455 0 0 0 11.017 6.591h10.608c4.617 0 8.833-2.516 11.025-6.591l36.358-67.842c1.834-3.425 1.967-7.575.359-11.083Z" fill-rule="evenodd"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <div class="stetho-years-heading">
+    <h2 class="section-heading">Stethoscope Throughout The Years</h2>
+  </div>
+  <div class="container">
+    <div class="issues-carousel-wrap">
+
+      <button class="issues-arrow prev" id="issuesPrev">&#8249;</button>
+      <button class="issues-arrow next" id="issuesNext">&#8250;</button>
+
+      <div class="issues-track" id="issuesTrack">
+
+        <div class="issue-card">
+          <a class="issue-card-inner" href="https://drive.google.com/file/d/1zzFjToXPSAk2jrkW6VcevJ68xels78-m/view?usp=sharing" target="_blank" rel="noopener">
+            <img src="assets/images/9f980d_897053bc0cbe4f728410fe70d0fcd414~mv2.jpg" alt="Stethoscope 2025 cover" />
+            <div class="issue-card-label">
+              <h3>Stethoscope 2025</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="issue-card">
+          <a class="issue-card-inner" href="https://issuu.com/tmsstethoscope/docs/final-_stethoscope_2024_magazine-2" target="_blank" rel="noopener">
+            <img src="assets/images/9f980d_aa0cf59c047447d4944f42b939a84334~mv2.png" alt="Stethoscope 2024 cover" />
+            <div class="issue-card-label">
+              <h3>Stethoscope 2024</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="issue-card">
+          <a class="issue-card-inner" href="https://drive.google.com/file/d/1s_jTu4mB-ionyxdQduZ79HZ0_uIVEz6l/view?usp=sharing" target="_blank" rel="noopener">
+            <img src="assets/images/9f980d_377262fbb2af4bb49fb89d5c3658ed94~mv2.jpg" alt="Stethoscope 2022 cover" />
+            <div class="issue-card-label">
+              <h3>Stethoscope 2022</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="issue-card">
+          <a class="issue-card-inner" href="https://drive.google.com/file/d/1J-mauBtNYzKaDPoea23NMiUwNhzcZalR/view" target="_blank" rel="noopener">
+            <img src="assets/images/9f980d_d0870d76403a4012ae3cd552d2936f71~mv2.png" alt="Stethoscope 2021 cover" />
+            <div class="issue-card-label">
+              <h3>Stethoscope 2021</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="issue-card">
+          <a class="issue-card-inner" href="https://drive.google.com/file/d/1jYCJvnWHFb-IB670KzarWBL-0xuX8gyI/view" target="_blank" rel="noopener">
+            <img src="https://drive.google.com/thumbnail?id=1jYCJvnWHFb-IB670KzarWBL-0xuX8gyI&sz=w400" alt="Stethoscope 2020 cover" />
+            <div class="issue-card-label">
+              <h3>Stethoscope 2020</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="issue-card">
+          <div class="issue-card-inner">
+            <img src="assets/images/9f980d_ec34041afbfe40e799a521ad4e82963e~mv2.png" alt="Stethoscope 2019 cover" />
+            <div class="issue-card-label">
+              <h3>Stethoscope 2019</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="issues-dots" id="issuesDots"></div>
+  </div>
+</section>
+
+<!-- #TMSonTOP -->
+<div class="hashtag-section">
+  <div class="container">
+    <h2>#TMSonTOP</h2>
+    <div class="social-row">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link"><img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener" class="social-icon-link"><img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" /></a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link"><img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" /></a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener" class="social-icon-link"><img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" /></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/images/9f980d_6f5b16238fb44d4796c9e157c1366650~mv2.png" alt="TMS Footer Logo" class="footer-logo" />
+    <p>© 2024 TAMS Medical Society</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener"><img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" /></a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" /></a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener"><img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" /></a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Board | TAMS Medical Society</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #3a0808; }
+
+    /* ── Page title ── */
+    .board-title-section {
+      background: #3a0808;
+      text-align: center;
+      padding: 56px 24px 40px;
+    }
+    .board-title-section h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: bold;
+      color: #e8d5a3;
+    }
+
+    /* ── Contained photo carousel ── */
+    .board-carousel-wrap {
+      display: flex;
+      justify-content: center;
+      padding: 0 24px 48px;
+      background: #3a0808;
+    }
+    .board-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      background: #000;
+      overflow: hidden;
+    }
+    .board-carousel-track {
+      display: flex;
+      transition: transform .4s ease;
+    }
+    .board-carousel-track img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    /* Caption bar */
+    .board-carousel-caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(240, 224, 192, 0.88);
+      padding: 10px 16px;
+    }
+    .board-carousel-caption .cap-label {
+      font-family: Georgia, serif;
+      font-size: .95rem;
+      font-weight: bold;
+      font-style: italic;
+      color: #8b1a1a;
+    }
+    .board-carousel-caption .cap-counter {
+      font-family: Georgia, serif;
+      font-size: .88rem;
+      color: #3a0808;
+    }
+    /* Arrows */
+    .board-carousel-arrow {
+      position: absolute;
+      top: calc(50% - 20px); /* center on image, not caption */
+      transform: translateY(-50%);
+      background: rgba(0,0,0,.35);
+      border: none;
+      color: #fff;
+      font-size: 5rem;
+      width: 56px;
+      height: 72px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: background .2s;
+      z-index: 2;
+    }
+    .board-carousel-arrow:hover { background: rgba(0,0,0,.6); }
+    .board-carousel-arrow.prev { left: 0; }
+    .board-carousel-arrow.next { right: 0; }
+
+    /* ── Roles section ── */
+    .board-roles-section {
+      background: #2d0808;
+      padding: 0 24px 64px;
+    }
+    .board-roles-subtitle {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: #e8d5a3;
+      text-align: center;
+      padding: 40px 0 32px;
+    }
+    .board-roles-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .board-role-card {
+      background: #4a0c0c;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 16px 36px;
+      min-height: 180px;
+      transition: background .2s;
+    }
+    .board-role-card:hover { background: #5e1010; }
+    .board-role-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #e8d5a3;
+      text-transform: lowercase;
+      letter-spacing: .5px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .board-role-card .member-name {
+      font-family: Georgia, serif;
+      font-size: .88rem;
+      font-style: italic;
+      color: rgba(232,213,163,.75);
+    }
+
+    .hashtag-section { background: #3a0808; }
+    footer { background: #2d0808; }
+
+    @media (max-width: 760px) {
+      .board-roles-grid { grid-template-columns: repeat(2, 1fr); }
+      .board-carousel-track img { height: 260px; }
+    }
+    @media (max-width: 440px) {
+      .board-roles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<!-- Title -->
+<div class="board-title-section">
+  <h1>Meet the Heartlings!</h1>
+</div>
+
+<!-- Photo carousel -->
+<div class="board-carousel-wrap">
+  <div class="board-carousel" id="boardCarousel">
+    <div class="board-carousel-track" id="boardTrack">
+      <img src="assets/images/9f980d_4a3be8de7e174c05b872fdd535b0fe0e~mv2.jpg" alt="Senior Sunrise" data-label="Senior Sunrise" />
+      <img src="assets/images/9f980d_84401a1b55ca4f5188559beac3f06350~mv2.jpg" alt="Club Bonanza" data-label="Club Bonanza" />
+      <img src="assets/images/9f980d_9e7d546cb9b54b129d94e066b274443a~mv2.jpg" alt="Team Outing" data-label="Team Outing" />
+      <img src="assets/images/9f980d_6b3ad697a7134de2b0020e9abbb642a6~mv2.jpg" alt="Committee Carnival" data-label="Committee Carnival" />
+      <img src="assets/images/9f980d_1082d275d6db4ad0b64eae3ebd39337d~mv2.png" alt="Spring Fling" data-label="Spring Fling" />
+      <img src="assets/images/9f980d_b0973815d6e44452b19f04bba1e707d2~mv2.jpg" alt="Team Bonding" data-label="Team Bonding" />
+      <img src="assets/images/9f980d_87ee485d2317476b826c2e657cffe5d0~mv2.jpg" alt="First GA!" data-label="First GA!" />
+    </div>
+    <div class="board-carousel-caption">
+      <span class="cap-label" id="boardCapLabel">Senior Sunrise</span>
+      <span class="cap-counter" id="boardCapCounter">1/7</span>
+    </div>
+    <button class="board-carousel-arrow prev" id="boardPrev">&#8249;</button>
+    <button class="board-carousel-arrow next" id="boardNext">&#8250;</button>
+  </div>
+</div>
+
+<!-- Roles -->
+<div class="board-roles-section">
+  <p class="board-roles-subtitle">click on our roles to learn more about the 2025–2026 board!</p>
+
+  <div class="board-roles-grid">
+
+    <a href="board/board-president.html" class="board-role-card">
+      <h3>president</h3>
+      <span class="member-name">Neha Reddy</span>
+    </a>
+
+    <a href="board/board-vp.html" class="board-role-card">
+      <h3>vice-president</h3>
+      <span class="member-name">Surya Anand</span>
+    </a>
+
+    <a href="board/board-secretary.html" class="board-role-card">
+      <h3>secretary</h3>
+      <span class="member-name">Pratham Eddula</span>
+    </a>
+
+    <a href="board/board-social.html" class="board-role-card">
+      <h3>social coordinator</h3>
+      <span class="member-name">Annika Wong</span>
+    </a>
+
+    <a href="board/board-treasurer.html" class="board-role-card">
+      <h3>treasurer</h3>
+      <span class="member-name">Aneesh Doppalapudi</span>
+    </a>
+
+  </div>
+</div>
+
+<!-- #TMSonTOP -->
+<div class="hashtag-section">
+  <div class="container">
+    <h2>#TMSonTOP</h2>
+    <div class="social-row">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" />
+      </a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" />
+      </a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" />
+      </a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener" class="social-icon-link">
+        <img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" />
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/images/9f980d_6f5b16238fb44d4796c9e157c1366650~mv2.png"
+         alt="TMS Footer Logo" class="footer-logo" />
+    <p>© 2024 TAMS Medical Society</p>
+    <div class="footer-social">
+      <a href="https://instagram.com/tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/40898a93cfff4578b1779073137eb1b4.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/groups/1161247711754579/" target="_blank" rel="noopener"><img src="assets/images/aebe5b6fd55f471a936c72ff2c8289d7.png" alt="Facebook" /></a>
+      <a href="https://youtube.com/@tamsmedicalsociety" target="_blank" rel="noopener"><img src="assets/images/a1fed5f687844a6e8f42e017f71dfcb4.png" alt="YouTube" /></a>
+      <a href="https://open.spotify.com/user/31pdsvxwivwrotxrcafrh4f5dyoe" target="_blank" rel="noopener"><img src="assets/images/11062b_6be2954dd07643d2be1381d1ff5a40ba~mv2.png" alt="Spotify" /></a>
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+<script src="main.js"></script>
+<script>
+(function() {
+  const track   = document.getElementById('boardTrack');
+  const images  = track.querySelectorAll('img');
+  const label   = document.getElementById('boardCapLabel');
+  const counter = document.getElementById('boardCapCounter');
+  const total   = images.length;
+  let current   = 0;
+
+  function goTo(idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    label.textContent   = images[current].dataset.label;
+    counter.textContent = `${current + 1}/${total}`;
+  }
+
+  document.getElementById('boardPrev').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('boardNext').addEventListener('click', () => goTo(current + 1));
+})();
+</script>
+</body>
+</html>
