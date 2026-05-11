@@ -8,25 +8,16 @@
   let current  = 0;
   let timer;
 
-  function setSlideDirection(direction) {
-    carousel.classList.toggle('slide-prev', direction === 'prev');
-    carousel.classList.toggle('slide-next', direction !== 'prev');
-  }
-
-  function goTo(idx, direction) {
-    const target = (idx + slides.length) % slides.length;
-    if (target === current) return;
-
-    setSlideDirection(direction || (target > current ? 'next' : 'prev'));
+  function goTo(idx) {
     slides[current].classList.remove('active');
     dots[current].classList.remove('active');
-    current = target;
+    current = (idx + slides.length) % slides.length;
     slides[current].classList.add('active');
     dots[current].classList.add('active');
   }
 
-  function next() { goTo(current + 1, 'next'); }
-  function prev() { goTo(current - 1, 'prev'); }
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
 
   function startTimer() {
     clearInterval(timer);
@@ -36,14 +27,9 @@
   document.getElementById('carouselNext').addEventListener('click', () => { next(); startTimer(); });
   document.getElementById('carouselPrev').addEventListener('click', () => { prev(); startTimer(); });
   dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const target = +dot.dataset.idx;
-      goTo(target, target > current ? 'next' : 'prev');
-      startTimer();
-    });
+    dot.addEventListener('click', () => { goTo(+dot.dataset.idx); startTimer(); });
   });
 
-  setSlideDirection('next');
   startTimer();
 })();
 

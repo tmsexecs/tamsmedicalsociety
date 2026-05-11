@@ -211,20 +211,13 @@ section.alt { background: rgba(0,0,0,.15); }
   position: absolute;
   inset: 0;
   opacity: 0;
-  transform: translateX(8%);
-  transition: opacity .75s ease, transform .75s ease;
-  will-change: opacity, transform;
+  transition: opacity .65s ease;
   pointer-events: none;
-}
-.hero-carousel.slide-prev .carousel-slide {
-  transform: translateX(-8%);
 }
 .carousel-slide.active {
   position: relative;
   opacity: 1;
-  transform: translateX(0);
   pointer-events: auto;
-  z-index: 1;
 }
 .carousel-slide img {
   width: 100%;
@@ -303,17 +296,6 @@ section.alt { background: rgba(0,0,0,.15); }
   border: none;
 }
 .carousel-dot.active { background: #fff; }
-
-@media (prefers-reduced-motion: reduce) {
-  .carousel-slide {
-    transition: none;
-    transform: none;
-  }
-
-  .hero-carousel.slide-prev .carousel-slide {
-    transform: none;
-  }
-}
 
 /* ── What is TMS section ── */
 .what-tms-body {
