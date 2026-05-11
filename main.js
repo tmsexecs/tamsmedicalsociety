@@ -152,3 +152,25 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 });
+
+/* Icon slide-in */
+const iconRevealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      iconRevealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.25, rootMargin: '0px 0px -20px 0px' });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll(
+    '.hfc-icon, .ic-icon, .ec-icon, .ec-icon-svg, .cc-icon, .cc-icon-img, .eh-icon, .eh-icon-svg, .ch-icon, .ch-icon-img'
+  ).forEach((icon, i) => {
+    icon.style.opacity = '0';
+    icon.style.transform = 'translateY(-28px)';
+    icon.style.transition = `opacity .45s ease ${(i % 4) * .05}s, transform .45s ease ${(i % 4) * .05}s`;
+    iconRevealObserver.observe(icon);
+  });
+});
