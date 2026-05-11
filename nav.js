@@ -53,7 +53,7 @@
           <a href="${base}committees/committee-stethoscope.html">Stethoscope Committee</a>
           <a href="${base}committees/committee-redcross.html">Red Cross</a>
           <a href="${base}committees/committee-biomedical.html">TAMS Biomedical Engineering</a>
-          <a href="${base}committees/committee-wilderness.html">Wilderness Medicine Committee</a>
+          <a href="${base}committees/committee-best-of-texas.html">Best of Texas</a>
           <a href="${base}committees/committee-healing-music.html">Healing With Music</a>
         </div>
       </div>
