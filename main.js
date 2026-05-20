@@ -33,6 +33,42 @@
   startTimer();
 })();
 
+/* Board member photo slideshows */
+document.querySelectorAll('[data-board-slideshow]').forEach(slideshow => {
+  const slides = slideshow.querySelectorAll('.board-bio-photo');
+  const prevBtn = slideshow.querySelector('.board-photo-arrow.prev');
+  const nextBtn = slideshow.querySelector('.board-photo-arrow.next');
+  let current = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+  }
+
+  function next() {
+    goTo(current + 1);
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, 4500);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goTo(current - 1);
+    startTimer();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    next();
+    startTimer();
+  });
+
+  startTimer();
+});
+
 /* ── Mobile nav toggle ── */
 const navToggle = document.getElementById('navToggle');
 const navLinksWrap = document.getElementById('navLinksWrap');

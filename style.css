@@ -240,6 +240,51 @@ section.alt { background: rgba(0,0,0,.15); }
   aspect-ratio: 287 / 264;
   object-fit: cover;
 }
+.board-photo-slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 680 / 907;
+  background: #000;
+  overflow: hidden;
+}
+.board-photo-slideshow .board-bio-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.board-photo-slideshow .board-bio-photo.active {
+  opacity: 1;
+}
+.board-photo-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 42px;
+  border: 0;
+  background: rgba(0, 0, 0, .45);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: background var(--transition);
+}
+.board-photo-arrow:hover {
+  background: rgba(0, 0, 0, .68);
+}
+.board-photo-arrow.prev {
+  left: 0;
+}
+.board-photo-arrow.next {
+  right: 0;
+}
 .board-bio-copy {
   font-family: var(--font-serif);
   font-size: clamp(.92rem, 2vw, 1rem);
@@ -360,21 +405,34 @@ section.alt { background: rgba(0,0,0,.15); }
   object-fit: cover;
   display: block;
 }
+.carousel-slide img.committee-hero-photo {
+  object-position: center 18%;
+}
+.carousel-slide img.aid-cause-hero-photo {
+  object-position: center 38%;
+}
 .carousel-overlay {
   position: absolute;
-  top: 50%;
-  right: 12%;
-  transform: translateY(-50%);
-  text-align: center;
+  left: clamp(24px, 5vw, 64px);
+  right: auto;
+  bottom: clamp(28px, 6vw, 72px);
+  top: auto;
+  transform: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 .carousel-heading {
   font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 7.5vw, 6.5rem);
+  font-size: clamp(2rem, 5vw, 4.6rem);
   font-weight: bold;
   color: var(--cream);
-  line-height: 1.0;
-  margin-bottom: 28px;
-  -webkit-text-stroke: 3px #2d0808;
+  line-height: 1;
+  margin-bottom: 0;
+  white-space: nowrap;
+  -webkit-text-stroke: 2px #2d0808;
   paint-order: stroke fill;
   text-shadow:
     -2px -2px 0 #2d0808,
@@ -382,11 +440,14 @@ section.alt { background: rgba(0,0,0,.15); }
     -2px  2px 0 #2d0808,
      2px  2px 0 #2d0808;
 }
+.carousel-heading br {
+  display: none;
+}
 .carousel-btn {
   display: inline-block;
   background: #5a0a0a;
   color: var(--cream);
-  padding: 13px 52px;
+  padding: 11px 28px;
   border-radius: 32px;
   font-family: var(--font-sans);
   font-size: .97rem;
@@ -865,6 +926,19 @@ footer p {
 @media (max-width: 640px) {
   .events-grid  { grid-template-columns: 1fr; }
   .board-roles-grid { grid-template-columns: repeat(2,1fr); }
+  .carousel-overlay {
+    left: 18px;
+    bottom: 42px;
+    gap: 10px;
+  }
+  .carousel-heading {
+    white-space: normal;
+    font-size: clamp(1.65rem, 9vw, 2.4rem);
+  }
+  .carousel-btn {
+    padding: 9px 20px;
+    font-size: .84rem;
+  }
   .navbar-inner { justify-content: flex-start; flex-wrap: wrap; }
   .nav-item { flex: 1 1 50%; }
   .nav-item > a { padding: 10px 12px; font-size: .82rem; }

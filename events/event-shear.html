@@ -16,7 +16,9 @@
     .event-gallery { padding: 48px 0; }
     .event-gallery h2 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: bold; color: var(--cream); text-align: center; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
     .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-    .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .gallery-grid img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: rgba(0,0,0,.25); }
+    .gallery-grid .gallery-group-photo { grid-column: 1 / -1; }
+    .gallery-grid .gallery-group-photo { aspect-ratio: 16/9; object-fit: contain; background: #000; }
     .event-nav-strip { background: var(--maroon-dark); padding: 18px 0; border-top: 1px solid rgba(255,238,214,.15); }
     .event-nav-strip .container { text-align: center; }
     .event-nav-strip a { font-family: Georgia, serif; font-size: .78rem; color: var(--cream-dim); margin: 4px 8px; display: inline-block; transition: color .2s; }
@@ -36,12 +38,15 @@
   <div class="container">
     <h2>Photos</h2>
     <div class="gallery-grid">
-    <img src="../assets/images/9f980d_2dae6fccb9e44a86bb897070a88a1908~mv2.jpg" alt="photo" loading="lazy" />
-    <img src="../assets/images/9f980d_3eae269643da4e66afafdceafab0416e~mv2.jpg" alt="photo" loading="lazy" />
-    <img src="../assets/images/9f980d_4c16a4867e0048ad9a51b975bcf2b581~mv2.jpg" alt="photo" loading="lazy" />
-    <img src="../assets/images/9f980d_5a40dc7644044b3eaac34a46cf859b96~mv2.jpg" alt="photo" loading="lazy" />
-    <img src="../assets/images/9f980d_6f2ff812703e442ea1642ac7ec8fe5f9~mv2.jpg" alt="photo" loading="lazy" />
-    <img src="../assets/images/9f980d_70667c551adb44caaf920406efdd7dde~mv2.jpg" alt="photo" loading="lazy" />
+      <img src="../assets/images/shear-kindness-group.jpg" alt="Shear Kindness group photo" class="gallery-group-photo" loading="lazy" />
+      <img src="../assets/images/shear-kindness-01.jpg" alt="Shear Kindness outdoor donation setup" loading="lazy" />
+      <img src="../assets/images/shear-kindness-02.jpg" alt="Shear Kindness haircut in progress" loading="lazy" />
+      <img src="../assets/images/shear-kindness-03.jpg" alt="Shear Kindness volunteers at the table" loading="lazy" />
+      <img src="../assets/images/shear-kindness-04.jpg" alt="Shear Kindness haircut station" loading="lazy" />
+      <img src="../assets/images/shear-kindness-05.jpg" alt="Shear Kindness friends under the tent" loading="lazy" />
+      <img src="../assets/images/shear-kindness-06.jpg" alt="Shear Kindness donated hair" loading="lazy" />
+      <img src="../assets/images/shear-kindness-07.jpg" alt="Shear Kindness hair donation participant" loading="lazy" />
+      <img src="../assets/images/shear-kindness-08.jpg" alt="Shear Kindness hair donation" loading="lazy" />
     </div>
   </div>
 </section>
