@@ -13,36 +13,11 @@
     .event-hero .eh-icon-svg { width: 80px; height: 80px; margin-bottom: 18px; }
     .event-hero h1 { font-family: Georgia, serif; font-size: clamp(1.8rem,4vw,3rem); font-weight: bold; color: var(--cream); margin-bottom: 12px; }
     .event-hero p { font-family: Georgia, serif; font-size: 1rem; color: var(--cream-dim); max-width: 640px; margin: 0 auto; line-height: 1.75; }
-    .event-gallery { padding: 48px 0 56px; }
-    .event-gallery .container { max-width: none; padding: 0 clamp(10px, 2vw, 24px); }
-    .event-gallery h2 { font-family: Georgia, serif; font-size: 1.4rem; font-weight: bold; color: var(--cream); text-align: center; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: minmax(120px, 11vw); grid-auto-flow: dense; gap: clamp(8px, 1vw, 14px); }
-    .gallery-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .gallery-grid .wide { grid-column: span 6; grid-row: span 2; }
-    .gallery-grid .big { grid-column: span 6; grid-row: span 3; }
-    .gallery-grid .tall { grid-column: span 3; grid-row: span 3; }
-    .gallery-grid .small { grid-column: span 3; grid-row: span 2; }
     .event-nav-strip { background: var(--maroon-dark); padding: 18px 0; border-top: 1px solid rgba(255,238,214,.15); }
     .event-nav-strip .container { text-align: center; }
     .event-nav-strip a { font-family: Georgia, serif; font-size: .78rem; color: var(--cream-dim); margin: 4px 8px; display: inline-block; transition: color .2s; }
     .event-nav-strip a:hover { color: var(--cream); }
     .event-nav-strip a.current { color: var(--cream); font-weight: bold; text-decoration: underline; text-underline-offset: 3px; }
-    @media (max-width: 820px) {
-      .gallery-grid { grid-template-columns: repeat(6, 1fr); grid-auto-rows: minmax(105px, 22vw); }
-      .gallery-grid .wide,
-      .gallery-grid .big { grid-column: span 6; grid-row: span 2; }
-      .gallery-grid .tall,
-      .gallery-grid .small { grid-column: span 3; grid-row: span 2; }
-    }
-    @media (max-width: 520px) {
-      .event-gallery .container { padding: 0 10px; }
-      .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-      .gallery-grid .wide,
-      .gallery-grid .big,
-      .gallery-grid .tall,
-      .gallery-grid .small { grid-column: auto; grid-row: auto; }
-      .gallery-grid img { height: auto; aspect-ratio: auto; }
-    }
   </style>
 </head>
 <body>
@@ -50,21 +25,8 @@
 <div class="event-hero">
   <div class="eh-icon"><i class="bi bi-flower1"></i></div>
   <h1>Spring Fling</h1>
-  <p>Held by the newly-chosen board, we host a field day event where students get to wind down and celebrate the past year!</p>
+  <p>And to end of the year is Spring Fling! As their first event, the newly-chosen baby board (partnering with McConnell Hall Association) puts together a field-day event for the entirety of TAMS. The event is held after Rosecutting, TAMS' annual student life ceremony commemorating the student body throughout the year. With food, games, and MHA's senior bonfire to end the night, the field day is our way of saying thank you with this final hoorah as the year comes to a close. </p>
 </div>
-<section class="event-gallery">
-  <div class="container">
-    <h2>Photos</h2>
-    <div class="gallery-grid">
-      <img src="../assets/images/9f980d_2398454805164421a923f661379ac8f9~mv2.jpg" alt="Spring Fling photo" class="big" loading="lazy" />
-      <img src="../assets/images/9f980d_263caa7edb2649ee85b6492606be88b7~mv2.jpg" alt="Spring Fling photo" class="wide" loading="lazy" />
-      <img src="../assets/images/9f980d_31a2865ac56f4f8ab955af307be0200b~mv2.jpg" alt="Spring Fling photo" class="small" loading="lazy" />
-      <img src="../assets/images/9f980d_3f954cf9f67a4ca494c227e968662113~mv2.jpg" alt="Spring Fling photo" class="tall" loading="lazy" />
-      <img src="../assets/images/9f980d_4b3524e3e9a0485bba373445fed3faea~mv2.jpg" alt="Spring Fling photo" class="wide" loading="lazy" />
-      <img src="../assets/images/9f980d_71b44f02539944f9962cd6801325002b~mv2.jpg" alt="Spring Fling photo" class="small" loading="lazy" />
-    </div>
-  </div>
-</section>
 <div class="event-nav-strip">
   <div class="container">
     <a href="event-carnival.html">Committee Carnival</a> |
