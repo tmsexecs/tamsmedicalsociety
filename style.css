@@ -978,15 +978,19 @@ footer p {
     padding: 6px 18px;
     font-size: .84rem;
   }
-  .navbar-inner { justify-content: flex-start; flex-wrap: wrap; }
-  .nav-item { flex: 1 1 50%; }
-  .nav-item > a { padding: 10px 12px; font-size: .82rem; }
-  .nav-links-wrap {
+  .navbar { position: sticky; }
+  .navbar-inner {
     display: none;
     flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     width: 100%;
   }
-  .nav-links-wrap.open { display: flex; }
-  .nav-toggle { display: flex; }
-  .nav-item .dropdown-menu { position: static; transform: none; box-shadow: none; border: none; background: rgba(0,0,0,.3); }
+  .navbar-inner.open { display: flex; }
+  .nav-item { flex: 0 0 auto; width: 100%; }
+  .nav-item > a { padding: 10px 12px; font-size: .82rem; }
+  .nav-toggle { display: flex; margin: 0 8px 0 auto; }
+  .nav-item .dropdown-menu { display: none; }
+  .nav-item:hover .dropdown-menu { display: none; }
 }
