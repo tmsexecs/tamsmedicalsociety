@@ -17,7 +17,7 @@
     <span class="site-header-title">TAMS Medical Society</span>
   </header>
   <nav class="navbar">
-    <div class="navbar-inner" id="navLinksWrap">
+    <div class="navbar-inner nav-links-wrap" id="navLinksWrap">
       <div class="nav-item"><a href="${base}index.html"${active('index.html')}>Home</a></div>
       <div class="nav-item">
         <a href="${base}board.html"${active('board.html')}>The Board</a>
