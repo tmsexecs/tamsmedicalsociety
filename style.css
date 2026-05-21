@@ -415,7 +415,7 @@ section.alt { background: rgba(0,0,0,.15); }
   position: absolute;
   left: clamp(24px, 5vw, 64px);
   right: auto;
-  bottom: clamp(28px, 6vw, 72px);
+  bottom: clamp(16px, 3.5vw, 42px);
   top: auto;
   transform: none;
   text-align: left;
@@ -928,7 +928,7 @@ footer p {
   .board-roles-grid { grid-template-columns: repeat(2,1fr); }
   .carousel-overlay {
     left: 18px;
-    bottom: 42px;
+    bottom: 24px;
     gap: 10px;
   }
   .carousel-heading {
