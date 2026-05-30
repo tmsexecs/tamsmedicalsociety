@@ -7,12 +7,29 @@
   const folder = parts.length >= 2 ? parts[parts.length - 2] : '';
   const inSub  = ['board', 'committees', 'events'].includes(folder);
   const base   = inSub ? '../' : '';
+  const logoPath = `${base}assets/images/9f980d_6731e58e32eb4afbbd296f6eef0d83a1~mv2.png`;
+  const faviconPath = `${base}assets/images/favicon.png`;
+
+  function setIcon(rel) {
+    let icon = document.querySelector(`link[rel="${rel}"]`);
+    if (!icon) {
+      icon = document.createElement('link');
+      icon.rel = rel;
+      document.head.appendChild(icon);
+    }
+    icon.type = 'image/png';
+    icon.sizes = '512x512';
+    icon.href = faviconPath;
+  }
+
+  setIcon('icon');
+  setIcon('apple-touch-icon');
 
   function active(href) { return current === href ? ' class="active"' : ''; }
 
   const html = `
   <header class="site-header">
-    <img src="${base}assets/images/9f980d_6731e58e32eb4afbbd296f6eef0d83a1~mv2.png"
+    <img src="${logoPath}"
          alt="TMS Logo" class="site-header-logo" />
     <span class="site-header-title">TAMS Medical Society</span>
   </header>
