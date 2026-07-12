@@ -159,14 +159,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 /* ── Contact form mock submit ── */
-const cForm = document.getElementById('contactForm');
-if (cForm) {
-  cForm.addEventListener('submit', e => {
-    e.preventDefault();
-    cForm.innerHTML = '<p style="text-align:center;padding:32px;color:var(--cream);font-size:1.05rem;">Thank you for your message! The TMS exec board will be in touch soon.</p>';
-  });
-}
-
 /* ── Scroll-reveal ── */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {

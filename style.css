@@ -836,6 +836,40 @@ section.alt { background: rgba(0,0,0,.15); }
   color: var(--cream);
   margin-bottom: 20px;
 }
+.contact-social-intro {
+  color: var(--cream-dim);
+  font-size: .9rem;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+.contact-social-list {
+  display: grid;
+  gap: 12px;
+}
+.contact-social-list a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,238,214,.18);
+  background: rgba(0,0,0,.18);
+  color: var(--cream);
+  transition: background var(--transition), border-color var(--transition);
+}
+.contact-social-list a:hover {
+  background: rgba(255,238,214,.1);
+  border-color: rgba(255,238,214,.38);
+}
+.contact-social-list img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.contact-social-list span {
+  font-size: .95rem;
+  color: var(--cream);
+}
 .form-group { margin-bottom: 16px; }
 .form-group label {
   display: block;
