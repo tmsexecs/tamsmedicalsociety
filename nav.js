@@ -75,6 +75,7 @@
         </div>
       </div>
       <div class="nav-item"><a href="${base}stethoscope.html"${active('stethoscope.html')}>Stethoscope Journal</a></div>
+      <div class="nav-item"><a href="${base}forms.html"${active('forms.html')}>Forms</a></div>
       <div class="nav-item">
         <a href="${base}info.html"${active('info.html')}>Info</a>
         <div class="dropdown-menu">
