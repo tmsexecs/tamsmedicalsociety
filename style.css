@@ -909,6 +909,23 @@ section.alt { background: rgba(0,0,0,.15); }
   font-size: .9rem;
   color: var(--cream-dim);
 }
+.calendar-embed-wrap {
+  width: 100%;
+  height: min(600px, 78vh);
+  min-height: 420px;
+  margin-bottom: 40px;
+  background: rgba(0,0,0,.18);
+  border: 1px solid rgba(255,238,214,.3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.calendar-embed {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 .cal-semester {
   font-family: var(--font-serif);
   font-size: 1.2rem;
